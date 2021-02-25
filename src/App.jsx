@@ -3,10 +3,15 @@ import React, {useState} from "react";
 
 const App = () => {
     const [username, setUsername] = useState("");
+    const [loaded, checkLoaded] = useState(false);
 
     // function that makes handle state change
     const handleButtonClick = event => {
         alert(`Thanks for visiting my first React site, ${username}!`);
+    }
+    
+    if (loaded) {
+        <h6>Website Loading...</h6>
     }
 
     return (
