@@ -17,6 +17,8 @@ const App = () => {
 
             <input value={username} onChange={event => setUsername(event.target.value)} />
             <button value={username} onChange={handleButtonClick} onClick={handleButtonClick}>Click Me, Click Me</button>
+
+            <p>You are logging in as: {username}.</p>
         </>
     )
     };
