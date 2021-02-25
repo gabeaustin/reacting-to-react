@@ -6,7 +6,7 @@ const App = () => {
 
     // function that makes handle state change
     const handleButtonClick = event => {
-        setUsername(event.target.value);
+        alert(`Thanks for visiting my first React site, ${username}!`);
     }
 
     return (
