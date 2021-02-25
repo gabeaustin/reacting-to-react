@@ -1,41 +1,17 @@
+import React from "react";
 
-import React, {useState, useEffect} from "react";
-import Greeter from "./Greeter";
-
-const App = (props) => {
-  const [loaded, setLoaded] = useState(false);
-  const [username, setUsername] = useState("");
-
-  useEffect(() => {
-    if (loaded === false) {
-      setTimeout(() => setLoaded(!loaded), 3000);
-    }
-  }, [loaded]);
-
-  let handleClick = () => setLoaded(!loaded);
-
-  if (loaded) {
+const Greeter = ({phrase, name}) => {
     return (
-      <div>
         <>
             <Greeter name = "Don Lemon" phrase = "This is CNN." />
             <Greeter name = "T.D. Jakes" phrase = "Get Ready, Get Ready, Get Ready!!" />
             <Greeter name = "Oprah" phrase = "You get a car, You get a car!" />
-        </>
+    
+            <p><h3>Hi, {this.props.name}!</h3></p>
 
-        <input type="text" onChange={(e) => setUsername(e.target.value)} />
-        <p>You are logging in as: {username}</p>
-        <p>{props.text}</p>
-      </div>
+            <h1>Hi, {name}! {phrase}</h1>
+        </>
     );
-  } else {
-    return (
-      <>
-        <h1>Website Loading...</h1>
-        <button onClick={() => handleClick()}>Click here</button>
-      </>
-    );
-  }
 };
 
-export default App;
+export default Greeter;
